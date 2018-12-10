@@ -39,16 +39,13 @@ def on_message(message):
             #Only go into loops if there are multiple dice being rolled
             if multiplier != 1:
 
-                full_roll = [] #Array of rolled results
                 totalresult = 0 #Sum of rolled results
                 
                 for x in range(multiplier):
                     result = random.randint(1, dice) #Generates a random number between 1 and the number of sides the dice have
                     totalresult += result 
                     full_roll.append(result)
-
-                for value in full_roll:
-                    output += str(value) + " + " #Formats output string but the second for loop is probably unnecessary 
+                    output += str(result) + " + " #Formats output string  
 
                 #Final formatting of string: roll 1 + roll 2 + roll n = total
                 output = output.rstrip(' + ') 
